@@ -19,7 +19,8 @@ const HotelType = new GraphQLObjectType({
     zipcode: { type: GraphQLString },
     phoneNumber: { type: GraphQLInt },
     email: { type: GraphQLString },
-    promoCode: { type: GraphQLString }
+    promoCode: { type: GraphQLString },
+    image: { type: GraphQLString }
   })
 });
 

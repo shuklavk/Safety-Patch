@@ -7,9 +7,6 @@ export default ({ arrOfHotels }) => {
     return <SearchCard img={hotel.img} name={hotel.name} />;
   });
   return (
-    <div className={`container ${styles.searchResults}`}>
-      {hotelCards}
-      />
-    </div>
+    <div className={`container ${styles.searchResults}`}>{hotelCards}</div>
   );
 };

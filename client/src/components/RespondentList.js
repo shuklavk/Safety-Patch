@@ -5,8 +5,6 @@ import { left } from '@popperjs/core';
 import { graphql } from 'react-apollo';
 
 export default graphql(fetchRespondentsByAgencyIdQuery)(props => {
-  console.log('data?', props.data.respondents);
-
   if (props.data.loading) {
     return (
       <div>

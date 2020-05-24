@@ -9,7 +9,8 @@ const HotelSchema = Schema({
   zipcode: { type: String },
   phoneNumber: { type: Number },
   email: { type: String },
-  promoCode: { type: String }
+  promoCode: { type: String },
+  image: { type: String }
 });
 
 const Hotel = mongoose.model('hotel', HotelSchema);

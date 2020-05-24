@@ -73,11 +73,22 @@ const mutation = new GraphQLObjectType({
         zipcode: { type: GraphQLString },
         phoneNumber: { type: GraphQLInt },
         email: { type: GraphQLString },
-        promoCode: { type: GraphQLString }
+        promoCode: { type: GraphQLString },
+        image: { type: GraphQLString }
       },
       resolve(
         parentValue,
-        { name, address, city, state, zipcode, phoneNumber, email, promoCode }
+        {
+          name,
+          address,
+          city,
+          state,
+          zipcode,
+          phoneNumber,
+          email,
+          promoCode,
+          image
+        }
       ) {
         return new Hotel({
           name,
@@ -87,7 +98,8 @@ const mutation = new GraphQLObjectType({
           zipcode,
           phoneNumber,
           email,
-          promoCode
+          promoCode,
+          image
         }).save();
       }
     }

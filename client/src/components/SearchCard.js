@@ -3,7 +3,7 @@ import styles from './SearchCard.module.css';
 
 export default ({ img, name }) => {
   return (
-    <div>
+    <div style={{ textAlign: 'center' }}>
       <div
         className="card"
         style={{
@@ -20,9 +20,9 @@ export default ({ img, name }) => {
             alt="Card image cap"
             style={{ borderRadius: '43px', height: '210px' }}
           />
-          <div className={styles.topLeft}>{name} </div>
         </div>
       </div>
+      <h5>{name}</h5>
     </div>
   );
 };
