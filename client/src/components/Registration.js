@@ -150,6 +150,7 @@ class Registration extends React.Component {
                 variant="primary"
                 onClick={this.handleSubmit}
                 className={styles.registerButton}
+                onClick={event =>  window.location.href='/login'}
               >
                 I'm Ready!
               </Button>
