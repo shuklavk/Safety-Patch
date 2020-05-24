@@ -11,7 +11,7 @@ import logo from './safetyPatchLogo.png';
 
 function App() {
   return (
-    <div className={styles.app}>
+    <div>
       <div>
         <Router>
           <NavBar />

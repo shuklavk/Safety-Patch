@@ -24,7 +24,7 @@ export default () => {
             <Link to="/">
               <button
                 type="button"
-                class="btn btn-link"
+                className="btn btn-link"
                 style={{
                   color: '#0074A3',
                   width: '150%',
