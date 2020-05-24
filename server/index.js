@@ -2,6 +2,7 @@ const express = require('express');
 const expressGraphQL = require('express-graphql');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const schema = require('./schema/schema.js');
 const MONGO_PASS = require('./mongoPass');
 const app = express();
@@ -19,6 +20,7 @@ mongoose.connection
   .on('error', error => console.log('Error connecting to MongoLab:', error));
 
 app.use(bodyParser.json());
+app.use(cors());
 
 app.use(
   '/graphql',

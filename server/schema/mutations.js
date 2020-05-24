@@ -29,17 +29,11 @@ const mutation = new GraphQLObjectType({
         agencyName: { type: GraphQLString },
         firstName: { type: GraphQLString },
         lastName: { type: GraphQLString },
-        profession: { type: GraphQLString },
         address: { type: GraphQLString },
         city: { type: GraphQLString },
         state: { type: GraphQLString },
-        zipcode: { type: GraphQLString },
         primaryPhoneNumber: { type: GraphQLInt },
-        secondaryPhoneNumber: { type: GraphQLInt },
         email: { type: GraphQLString },
-        idImage: { type: GraphQLString },
-        startDate: { type: GraphQLString },
-        endDate: { type: GraphQLString },
         verified: { type: GraphQLBoolean }
       },
       resolve(
@@ -48,34 +42,22 @@ const mutation = new GraphQLObjectType({
           agencyName,
           firstName,
           lastName,
-          profession,
           address,
           city,
           state,
-          zipcode,
           primaryPhoneNumber,
-          secondaryPhoneNumber,
           email,
-          idImage,
-          startDate,
-          endDate,
           verified
         }
       ) {
         const respondentUserInfo = {
           firstName,
           lastName,
-          profession,
           address,
           city,
           state,
-          zipcode,
           primaryPhoneNumber,
-          secondaryPhoneNumber,
           email,
-          idImage,
-          startDate,
-          endDate,
           verified
         };
         return Agency.addRespondent(agencyName, respondentUserInfo);

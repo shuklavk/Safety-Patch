@@ -2,7 +2,10 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import styles from './Registration.module.css';
+import fetchAgenciesQuery from '../queries/fetchAgencies';
+import addRespondentToAgencyQuery from '../queries/addRespondentToAgency';
 import { Dropdown } from 'react-bootstrap';
+import { graphql } from 'react-apollo';
 
 class Registration extends React.Component {
   constructor(props) {
@@ -15,9 +18,14 @@ class Registration extends React.Component {
       email: '',
       address: '',
       city: '',
-      state: ''
+      state: '',
+      arrOfOrgs: ['lsdfmsdlkvmldfm vldkfmvld', 'Org2', 'Org3']
     };
   }
+
+  // componentDidMount() {
+  //   console.log('data', this.props);
+  // }
 
   handleChange = e => {
     const temp = {};
@@ -32,9 +40,68 @@ class Registration extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    const {
+      firstName,
+      lastName,
+      phone,
+      email,
+      address,
+      city,
+      state,
+      organization
+    } = this.state;
+    this.props
+      .mutate({
+        variables: {
+          agencyName: organization,
+          firstName,
+          lastName,
+          primaryPhoneNumber: parseInt(phone),
+          email,
+          address,
+          city,
+          state,
+          verified: false
+        }
+      })
+      .then(() => {
+        this.props.data.refetch();
+      });
   };
 
+  renderAgencies() {
+    return this.props.data.agencies.map(org => {
+      return (
+        <Dropdown.Item
+          onClick={e => {
+            this.handleChangeDropdown(e);
+          }}
+        >
+          {org.name}
+        </Dropdown.Item>
+      );
+    });
+  }
+
   render() {
+    // console.log('DATA:', this.props.data.agencies);
+    // const testArr = this.props.data.agencies;
+    // console.log('test', testArr);
+    if (this.props.data.loading) {
+      return <h1>Loading...</h1>;
+    }
+    this.renderAgencies();
+    const arrOfDropdownEle = this.state.arrOfOrgs.map(org => {
+      return (
+        <Dropdown.Item
+          onClick={e => {
+            this.handleChangeDropdown(e);
+          }}
+        >
+          {org.name}
+        </Dropdown.Item>
+      );
+    });
     return (
       // <div className={styles.container}>
       <div style={{ display: '-webkit-box' }}>
@@ -44,7 +111,11 @@ class Registration extends React.Component {
             <p style={{ fontWeight: 600, margin: '2% 1.75%' }}>
               Tell us more about you so you can start booking
             </p>
-            <Form>
+            <Form
+              onSubmit={() => {
+                console.log('submitted');
+              }}
+            >
               <Form.Group>
                 <input
                   type="text"
@@ -76,27 +147,8 @@ class Registration extends React.Component {
                   <Dropdown.Menu
                     style={{ width: '83.5%', textAlign: 'center' }}
                   >
-                    <Dropdown.Item
-                      onClick={e => {
-                        this.handleChangeDropdown(e);
-                      }}
-                    >
-                      Org 1
-                    </Dropdown.Item>
-                    <Dropdown.Item
-                      onClick={e => {
-                        this.handleChangeDropdown(e);
-                      }}
-                    >
-                      Org 2
-                    </Dropdown.Item>
-                    <Dropdown.Item
-                      onClick={e => {
-                        this.handleChangeDropdown(e);
-                      }}
-                    >
-                      Org 3
-                    </Dropdown.Item>
+                    {/* {arrOfDropdownEle} */}
+                    {this.renderAgencies()}
                   </Dropdown.Menu>
                 </Dropdown>
               </Form.Group>
@@ -149,6 +201,7 @@ class Registration extends React.Component {
               <Button
                 variant="primary"
                 onClick={this.handleSubmit}
+                type="submit"
                 className={styles.registerButton}
               >
                 I'm Ready!
@@ -156,15 +209,17 @@ class Registration extends React.Component {
             </Form>
           </div>
         </div>
-        <div>
-          <img
-            style={{ width: '45%', marginTop: '5%' }}
-            src="https://creeksidechalets.com/wp-content/uploads/2018/04/group-of-friends-watching-mountain-sunrise.jpg"
-          />
-        </div>
+        {/* <div> */}
+        <img
+          style={{ width: '45%', marginTop: '5%' }}
+          src="https://creeksidechalets.com/wp-content/uploads/2018/04/group-of-friends-watching-mountain-sunrise.jpg"
+        />
+        {/* </div> */}
       </div>
     );
   }
 }
 
-export default Registration;
+export default graphql(addRespondentToAgencyQuery)(
+  graphql(fetchAgenciesQuery)(Registration)
+);

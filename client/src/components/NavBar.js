@@ -40,7 +40,7 @@ export default () => {
             <Link to="/hotels">
               <button
                 type="button"
-                class="btn btn-link"
+                className="btn btn-link"
                 style={{
                   color: '#0074A3',
                   width: '150%',
@@ -57,7 +57,7 @@ export default () => {
             <Link to="/register">
               <button
                 type="button"
-                class="btn btn-link"
+                className="btn btn-link"
                 style={{
                   color: '#0074A3',
                   width: '150%',
@@ -72,7 +72,7 @@ export default () => {
             <Link to="/login">
               <button
                 type="button"
-                class={`btn btn-primary ${styles.loginButton} shadow`}
+                className={`btn btn-primary ${styles.loginButton} shadow`}
               >
                 Login
               </button>

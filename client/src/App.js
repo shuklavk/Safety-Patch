@@ -6,49 +6,63 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Registration from './components/Registration';
 import Login from './components/Login';
-import Request from './components/Request'
-import Admin from './components/Admin'
+import Request from './components/Request';
+import Admin from './components/Admin';
 import HotelView from './components/HotelView';
 import SearchPage from './components/SearchPage';
 import styles from './App.module.css';
 import NavBar from './components/NavBar';
 import logo from './safetyPatchLogo.png';
+import ApolloClient from 'apollo-client';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { ApolloProvider } from 'react-apollo';
+import { HttpLink } from 'apollo-link-http';
+
+const link = new HttpLink({
+  uri: 'http://localhost:4000/graphql'
+});
+
+const client = new ApolloClient({
+  link,
+  cache: new InMemoryCache(),
+  dataIdFromObject: o => o.id
+});
 
 function App() {
   return (
-    <div>
+    <ApolloProvider client={client}>
       <div>
-        <Router>
-          <NavBar />
-          <Switch className={styles.content}>
-            <Route path="/hotels">{/* <Hotels /> */}</Route>
-            <Route path="/results">
-              {/* <Results /> */}
-            </Route>
-            <Route path="/register">
-              <Registration />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/request">
-              <div className={styles.container}>
-                <Request />
-              </div>
-            </Route>
-            <Route path="/admin">
-              <div className={styles.container}>
-                <Admin />
-              </div>
-            </Route>
-            <Route exact path="/search">
-              {/* <Search /> */}
-              <SearchPage />
-            </Route>
-          </Switch>
-        </Router>
+        <div>
+          <Router>
+            <NavBar />
+            <Switch className={styles.content}>
+              <Route path="/hotels">{/* <Hotels /> */}</Route>
+              <Route path="/results">{/* <Results /> */}</Route>
+              <Route path="/register">
+                <Registration />
+              </Route>
+              <Route path="/login">
+                <Login />
+              </Route>
+              <Route path="/request">
+                <div className={styles.container}>
+                  <Request />
+                </div>
+              </Route>
+              <Route path="/admin">
+                <div className={styles.container}>
+                  <Admin />
+                </div>
+              </Route>
+              <Route exact path="/search">
+                {/* <Search /> */}
+                <SearchPage />
+              </Route>
+            </Switch>
+          </Router>
+        </div>
       </div>
-    </div>
+    </ApolloProvider>
   );
 }
 
