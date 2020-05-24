@@ -12,6 +12,7 @@ import HotelView from './components/HotelView';
 import SearchPage from './components/SearchPage';
 import styles from './App.module.css';
 import NavBar from './components/NavBar';
+import AgencyNavBar from './components/AgencyNavBar';
 import logo from './safetyPatchLogo.png';
 import ApolloClient from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
@@ -34,14 +35,15 @@ function App() {
       <div>
         <div>
           <Router>
-            <NavBar />
             <Switch className={styles.content}>
               <Route path="/hotels">{/* <Hotels /> */}</Route>
               <Route path="/results">{/* <Results /> */}</Route>
               <Route path="/register">
+                <NavBar />
                 <Registration />
               </Route>
               <Route exact path="/login">
+                <NavBar />
                 <Login />
               </Route>
               <Route path="/request">
@@ -49,13 +51,15 @@ function App() {
                   <Request />
                 </div>
               </Route>
-              <Route path="/admin">
-                <div className={styles.container}>
-                  <Admin />
-                </div>
+              <Route path="/admin/respondent">
+                {/* <div className={styles.container}> */}
+                <AgencyNavBar />
+                <Admin />
+                {/* </div> */}
               </Route>
               <Route exact path="/search">
                 {/* <Search /> */}
+                <NavBar />
                 <SearchPage />
               </Route>
             </Switch>

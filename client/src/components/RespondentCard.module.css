@@ -1,0 +1,19 @@
+.main {
+  font-family: 'Noto Sans HK', sans-serif;
+}
+
+.registerButton {
+  background-color: #0074a3;
+  border: none;
+  width: 50%;
+  margin: 2% 1.75%;
+  border-radius: 6px;
+  /* float: right; */
+  display: inline-block;
+}
+
+.topRight {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}

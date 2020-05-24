@@ -18,6 +18,7 @@
     "futura-font": "^1.0.0",
     "graphql-tag": "^2.10.3",
     "jquery": "^3.5.1",
+    "mdbreact": "^4.26.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dates": "^21.8.0",

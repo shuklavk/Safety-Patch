@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import AgencyNavBar from './AgencyNavBar';
+import RespondentList from './RespondentList';
 
-const Admin = (props) => {
+export default () => {
   return (
     <div>
-      Hello admin page
+      <RespondentList />
     </div>
   );
 };
-
-export default Admin;
