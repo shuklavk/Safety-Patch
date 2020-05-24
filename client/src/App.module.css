@@ -1,0 +1,10 @@
+@media screen and (min-width: 800px) { 
+  .content { 
+    margin: 1em 2em; 
+  } 
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
