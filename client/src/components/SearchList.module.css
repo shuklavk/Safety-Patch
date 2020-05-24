@@ -1,0 +1,6 @@
+.searchResults {
+  display: flex;
+  justify-content: space-around;
+  flex-basis: 33.333333%;
+  flex-wrap: wrap;
+}

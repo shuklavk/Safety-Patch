@@ -1,0 +1,23 @@
+.searchLogo {
+  margin: 20px;
+}
+
+.searchResult {
+  margin: 20px 45px;
+}
+
+.loginButton {
+  background-color: #0074a3;
+  border: none;
+  width: 35%;
+  border-radius: 6px;
+  /* float: right; */
+  display: inline-block;
+}
+
+.buttonDiv {
+  width: 30%;
+  float: right;
+  margin: 30px 20px;
+  text-align: right;
+}
