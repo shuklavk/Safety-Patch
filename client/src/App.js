@@ -36,7 +36,10 @@ function App() {
         <div>
           <Router>
             <Switch className={styles.content}>
-              <Route path="/hotels">{/* <Hotels /> */}</Route>
+              <Route path="/admin/hotels">
+                <AgencyNavBar />
+                /<SearchPage />
+              </Route>
               <Route path="/results">{/* <Results /> */}</Route>
               <Route path="/register">
                 <NavBar />

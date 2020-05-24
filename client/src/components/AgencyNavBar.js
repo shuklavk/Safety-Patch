@@ -21,7 +21,7 @@ export default () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <Link to="/respondents">
+            <Link to="/admin/respondent">
               <button
                 type="button"
                 className="btn btn-link"
@@ -37,7 +37,7 @@ export default () => {
                 Respondents
               </button>
             </Link>
-            <Link to="/hotels">
+            <Link to="/admin/hotels">
               <button
                 type="button"
                 className="btn btn-link"
