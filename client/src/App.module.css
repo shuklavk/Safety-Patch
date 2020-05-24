@@ -14,13 +14,6 @@
     min-width: 480px;
   } 
 }
-
-.app {
-  display: flex;
-  justify-content: center;
-  min-width: 480px;
-}
-
 .container {
   display: flex;
   justify-content: left;
@@ -29,6 +22,16 @@
 
 .content button {
   background-color: rgb(0,116,163);
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+}
+
+.app button {
+  background-color: rgb(0, 116, 163);
+
   border: none;
 }
 
@@ -36,6 +39,38 @@
   margin-right: 20px;
 }
 
+
 h1 {
   display: inline;
 }
+
+.searchLogo {
+  margin: 20px;
+}
+
+.searchResult {
+  margin: 20px 45px;
+}
+
+.loginButton {
+  background-color: #0074a3;
+  border: none;
+  width: 150%;
+  margin-left: 20px;
+  border-radius: 6px;
+  /* float: right; */
+  display: inline-block;
+}
+
+.buttonDiv {
+  width: 30%;
+  float: right;
+  margin: 30px 20px;
+  text-align: right;
+}
+
+.navDiv {
+  display: flex;
+  justify-content: center;
+}
+
