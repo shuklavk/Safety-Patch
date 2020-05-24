@@ -21,25 +21,20 @@ class Login extends React.Component {
 
   render () { 
     return (
-      <div className={styles.container}>
-        <div>
-          <h1>Login</h1>
-          <p>Welcome back!</p>
-          <Form>
-            <Form.Group>
-              <Form.Label>EMAIL</Form.Label>
-              <Form.Control type="text" value={this.state.value} onChange={this.handleChange} name="email" />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label>PASSWORD</Form.Label>
-              <Form.Control type="password" value={this.state.value} onChange={this.handleChange} name="email" />
-            </Form.Group>
-            <Button variant="primary" onClick={this.handleSubmit}>Login</Button>
-          </Form>
-        </div>
-        <div>
-          Insert picture of buddies
-        </div>
+      <div>
+        <h1>Login</h1>
+        <p>Welcome back!</p>
+        <Form>
+          <Form.Group>
+            <Form.Label>EMAIL</Form.Label>
+            <Form.Control type="text" value={this.state.value} onChange={this.handleChange} name="email" />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>PASSWORD</Form.Label>
+            <Form.Control type="password" value={this.state.value} onChange={this.handleChange} name="email" />
+          </Form.Group>
+          <Button variant="primary" onClick={this.handleSubmit}>Login</Button>
+        </Form>
       </div>
     );
   }
