@@ -51,7 +51,7 @@ export default () => {
 
   return (
     <div className="container">
-      <header className={styles.searchLogo}>
+      {/* <header className={styles.searchLogo}>
         <img
           src="https://media.discordapp.net/attachments/713803790746124338/713927966576607232/Screen_Shot_2020-05-23_at_6.34.26_PM.png"
           alt=""
@@ -77,7 +77,7 @@ export default () => {
             Login
           </button>
         </div>
-      </header>
+      </header> */}
       <h3 className={styles.searchResult}>
         {' '}
         <span style={{ color: '#0074A3' }}> 82 results </span> in Riverside, CA
