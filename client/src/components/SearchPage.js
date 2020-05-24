@@ -64,7 +64,8 @@ export default () => {
             style={{
               color: '#0074A3',
               width: '35%',
-              display: 'inline-block'
+              display: 'inline-block',
+              backgroundColor: 'white'
             }}
           >
             Sign Up
