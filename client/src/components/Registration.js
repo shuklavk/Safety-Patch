@@ -6,6 +6,8 @@ import fetchAgenciesQuery from '../queries/fetchAgencies';
 import addRespondentToAgencyQuery from '../queries/addRespondentToAgency';
 import { Dropdown } from 'react-bootstrap';
 import { graphql } from 'react-apollo';
+import { navigate } from '@reach/router';
+import { Link, Redirect } from 'react-router-dom';
 
 class Registration extends React.Component {
   constructor(props) {
@@ -22,7 +24,6 @@ class Registration extends React.Component {
       arrOfOrgs: ['lsdfmsdlkvmldfm vldkfmvld', 'Org2', 'Org3']
     };
   }
-
   // componentDidMount() {
   //   console.log('data', this.props);
   // }
@@ -66,7 +67,9 @@ class Registration extends React.Component {
       })
       .then(() => {
         this.props.data.refetch();
+        // navigate('/login');
       });
+    // return <Redirect to="/login" />;
   };
 
   renderAgencies() {
@@ -212,7 +215,7 @@ class Registration extends React.Component {
         </div>
         {/* <div> */}
         <img
-          style={{ width: '45%', marginTop: '5%' }}
+          style={{ width: '600px', marginTop: '90px' }}
           src="https://creeksidechalets.com/wp-content/uploads/2018/04/group-of-friends-watching-mountain-sunrise.jpg"
         />
         {/* </div> */}

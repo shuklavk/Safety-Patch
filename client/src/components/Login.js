@@ -6,39 +6,62 @@ import styles from './Login.module.css';
 class Login extends React.Component {
   state = {
     email: '',
-    password: '',
-  }
+    password: ''
+  };
 
-  handleChange = (e) => {
+  handleChange = e => {
     const temp = {};
     temp[e.target.name] = e.target.value;
     this.setState(temp);
-  }
+  };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
-  }
+  };
 
-  render () { 
+  render() {
     return (
-
-      <div>
-        <h1>Login</h1>
-        <p>Welcome back!</p>
-        <Form>
-          <Form.Group>
-            <Form.Label>EMAIL</Form.Label>
-            <Form.Control type="text" value={this.state.value} onChange={this.handleChange} name="email" />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>PASSWORD</Form.Label>
-            <Form.Control type="password" value={this.state.value} onChange={this.handleChange} name="email" />
-          </Form.Group>
-          <Button variant="primary" onClick={this.handleSubmit}>Login</Button>
-        </Form>
+      <div
+        className={`container ${styles.mainDiv}`}
+        style={{ textAlign: 'center' }}
+      >
+        <h1 style={{ fontWeight: '900' }}>Login</h1>
+        <p style={{ fontWeight: '600' }}>Welcome back!</p>
+        <div>
+          <Form style={{ width: '50%', margin: '0 auto' }}>
+            <Form.Group>
+              <input
+                type="text"
+                value={this.state.email}
+                onChange={this.handleChange}
+                name="email"
+                placeholder="EMAIL"
+                className={styles.smallInput}
+              />
+            </Form.Group>
+            <Form.Group>
+              <input
+                type="text"
+                value={this.state.password}
+                onChange={this.handleChange}
+                name="password"
+                placeholder="PASSWORD"
+                className={styles.smallInput}
+              />
+            </Form.Group>
+            <Button
+              variant="primary"
+              onClick={this.handleSubmit}
+              type="submit"
+              className={styles.registerButton}
+            >
+              Login
+            </Button>
+          </Form>
+        </div>
       </div>
     );
   }
-};
+}
 
 export default Login;
