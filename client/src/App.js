@@ -4,19 +4,20 @@ import {
   Switch,
   Route,
   Link
-} from 'react-router-dom'
+} from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Registration from './components/Registration';
 import Login from './components/Login';
 import styles from './App.module.css';
+import logo from './safetyPatchLogo.png';
 
 function App() {
   return (
     <div>
       <Router>
         <Navbar className={styles.navbar} expand="sm">
-          <Navbar.Brand>Safety Patch</Navbar.Brand>
+          <Navbar.Brand><img src={logo} height="80" /></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav>
