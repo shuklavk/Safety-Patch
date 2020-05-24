@@ -73,6 +73,7 @@ class Registration extends React.Component {
     return this.props.data.agencies.map(org => {
       return (
         <Dropdown.Item
+          key={org.id}
           onClick={e => {
             this.handleChangeDropdown(e);
           }}
