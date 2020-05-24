@@ -14,24 +14,24 @@ import logo from './safetyPatchLogo.png';
 
 function App() {
   return (
-    <div>
-      <Router>
-        <Navbar className={styles.navbar} expand="sm">
-          <Navbar.Brand><img src={logo} height="80" /></Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav>
-              <Link to="/">Home</Link>
-              <Link to="/hotels">For Hotels</Link>
-            </Nav>
-            <Nav>
-              <Link to="/register">Sign Up</Link>
-              <Link to="/login">Login</Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-        <div className={styles.content}>
-          <Switch>
+    <div className={styles.app}>
+      <div>
+        <Router>
+          <Navbar className={styles.navbar} expand="sm">
+            <Navbar.Brand><img src={logo} height="80" /></Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav>
+                <Link to="/">Home</Link>
+                <Link to="/hotels">For Hotels</Link>
+              </Nav>
+              <Nav>
+                <Link to="/register">Sign Up</Link>
+                <Link to="/login">Login</Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
+          <Switch className={styles.content}>
             <Route path="/hotels">
               {/* <Hotels /> */}
             </Route>
@@ -48,8 +48,8 @@ function App() {
               {/* <Search /> */}
             </Route>
           </Switch>
-        </div>
-      </Router>
+        </Router>
+      </div>
     </div>
   );
 }

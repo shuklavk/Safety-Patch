@@ -4,11 +4,16 @@
   } 
 }
 
-.main {
+.app {
   display: flex;
   justify-content: center;
 }
 
-button {
-  background-color: rgb(71, 148, 110);
+.app button {
+  background-color: rgb(0,116,163);
+  border: none;
+}
+
+.navbar a {
+  margin-right: 20px;
 }
