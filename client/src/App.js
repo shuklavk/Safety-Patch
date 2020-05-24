@@ -18,7 +18,7 @@ import ApolloClient from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloProvider } from 'react-apollo';
 import { HttpLink } from 'apollo-link-http';
-
+import { createBrowserHistory } from 'history';
 const link = new HttpLink({
   uri: 'http://localhost:4000/graphql'
 });
@@ -29,12 +29,14 @@ const client = new ApolloClient({
   dataIdFromObject: o => o.id
 });
 
+const history = createBrowserHistory();
+
 function App() {
   return (
     <ApolloProvider client={client}>
       <div>
         <div>
-          <Router>
+          <Router history={history}>
             <Switch className={styles.content}>
               <Route path="/admin/hotels">
                 <AgencyNavBar />

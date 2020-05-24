@@ -2,6 +2,7 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import styles from './Login.module.css';
+import { withRouter } from 'react-router';
 
 class Login extends React.Component {
   state = {
@@ -17,9 +18,11 @@ class Login extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    this.props.history.push('/admin/respondent');
   };
 
   render() {
+    console.log('hist:', this.props);
     return (
       <div
         className={`container ${styles.mainDiv}`}
@@ -64,4 +67,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);

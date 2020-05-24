@@ -6,6 +6,7 @@ import fetchAgenciesQuery from '../queries/fetchAgencies';
 import addRespondentToAgencyQuery from '../queries/addRespondentToAgency';
 import { Dropdown } from 'react-bootstrap';
 import { graphql } from 'react-apollo';
+import { withRouter } from 'react-router';
 import { navigate } from '@reach/router';
 import { Link, Redirect } from 'react-router-dom';
 
@@ -68,6 +69,7 @@ class Registration extends React.Component {
       .then(() => {
         this.props.data.refetch();
         // navigate('/login');
+        this.props.history.push('/login');
       });
     // return <Redirect to="/login" />;
   };
@@ -224,6 +226,6 @@ class Registration extends React.Component {
   }
 }
 
-export default graphql(addRespondentToAgencyQuery)(
-  graphql(fetchAgenciesQuery)(Registration)
+export default withRouter(
+  graphql(addRespondentToAgencyQuery)(graphql(fetchAgenciesQuery)(Registration))
 );
