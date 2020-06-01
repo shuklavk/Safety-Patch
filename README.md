@@ -7,7 +7,7 @@
 <img width="1415" alt="Screen Shot 2020-05-24 at 10 52 16 AM" src="https://user-images.githubusercontent.com/45616379/82766716-0b843f80-9dd6-11ea-8fd3-80ba56c329bf.png">
 
 This project was submitted to Open Hacks 2020. I had 3 other teammates ([Gabriel](https://github.com/gabsong), 
-[Nico](https://github.com/estradanicolas), and [Michelle](https://devpost.com/myjkim13)). This README will focus on my mainly my **individual** contributions/experiences. 
+[Nico](https://github.com/estradanicolas), and [Michelle](https://devpost.com/myjkim13)). This README will focus on mainly my **individual** contributions/experiences. 
 
 Here is our demo video: https://www.youtube.com/watch?v=5D4MgRfHOz0&feature=emb_title
 
